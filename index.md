@@ -6,8 +6,11 @@ actions:
   - text: 快速开始→
     link: /guide/index.md
     type: primary
-  - text: 在线预览
+  - text: 国外预览
     link: https://meadmin-cn.github.io/meadmin-template/
+    type: secondary
+  - text: 国内预览
+    link: https://meadmin-cn.gitee.io/meadmin-template/
     type: secondary
 features:
   - title: 最新技术栈

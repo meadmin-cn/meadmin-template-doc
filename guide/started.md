@@ -54,6 +54,7 @@
 │   ├── router  路由配置
 │   │   ├── guard 路由全局守卫
 │   │   └── routes 动态路由存放目录
+|   ├── styles 样式文件 
 │   ├── store  pinia文件夹
 │   ├── utils  工具类
 │   ├── views  页面

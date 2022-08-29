@@ -60,6 +60,35 @@ export default defineUserConfig({
                     },
                 ]
             },
+            {
+                text: '相关链接',
+                children:[
+                    {
+                        text: '国内预览(完整版)',
+                        link: 'https://meadmin-cn.gitee.io/meadmin-template/',
+                    },
+                    {
+                        text: '国外预览(完整版)',
+                        link: 'https://meadmin-cn.github.io/meadmin-template/',
+                    },
+                    {
+                        text: 'Github',
+                        link: 'https://github.com/meadmin-cn/meadmin-template',
+                    },
+                    {
+                        text: 'Gitee',
+                        link: 'https://gitee.com/meadmin-cn/meadmin-template',
+                    },
+                    {
+                        text: '文档Github',
+                        link: 'https://github.com/meadmin-cn/meadmin-template-doc',
+                    },
+                    {
+                        text: '文档Gitee',
+                        link: 'https://gitee.com/meadmin-cn/meadmin-template-doc',
+                    },
+                ]
+            },
         ],
         repo: 'https://github.com/meadmin-cn/meadmin-template',
         docsRepo: 'https://github.com/meadmin-cn/meadmin-template-doc',
@@ -79,6 +108,7 @@ export default defineUserConfig({
                         '/guide/icon.md',
                         '/guide/request.md',
                         '/guide/i18n.md',
+                        '/guide/style.md',
                     ],
                 },
                 {
