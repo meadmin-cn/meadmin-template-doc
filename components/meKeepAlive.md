@@ -16,16 +16,31 @@ vue 官方的KeepAlive缓存只支持按组件名筛选过滤，这里自定义�
 
 这里只样式includeKey、excludeKey其余说明参考[KeepAlive](https://cn.vuejs.org/guide/built-ins/keep-alive.html)
 ```
-<KeepAlive includeKey="a,b">
+<me-keep-alive includeKey="a,b">
   <component :is="view" key="a" />
   <component :is="view" key="b" />
   <component :is="view" key="c" />
-</KeepAlive>
+</me-keep-alive>
 ```
 ```
-<KeepAlive excludeKey="c">
+<me-keep-alive excludeKey="c">
   <component :is="view" key="a" />
   <component :is="view" key="b" />
   <component :is="view" key="c" />
-</KeepAlive>
+</me-keep-alive>
+```
+
+## 局限性
+
+因为vue编译模板时对`KeepAlive` `tagName`做了特殊处理,当`MeKeepAlive`和`Transition`组件、`TransitionGroup`配合使用使用时，只能用渲染函数的方式使用，在`Vue 的单文件组件 (即 *.vue 文件)`中请使用`KeepAlive`组件。
+
+### `Transition`+渲染函数使用示例
+
+```
+import { Transition } from 'vue';
+const transitionProps={};
+const meKeepAlivenProps={};
+h(Transition, transitionProps, { 
+  default: () => h(MeKeepAlive, meKeepAlivenProps, [componentOptions])
+})
 ```
