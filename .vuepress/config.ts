@@ -49,7 +49,15 @@ export default defineUserConfig({
             },
             {
                 text: '组件',
-                link: '/components/meKeepAlive.md',
+                children: [
+                    {
+                        text: '核心组件',
+                        link: '/components/core/meKeepAlive.md',
+                    },
+                    {
+                        text: '扩展组件',
+                        link: '/components/extends/meKeepAlive.md',
+                    }]
             },
             {
                 text: '社区',
@@ -123,12 +131,18 @@ export default defineUserConfig({
             ],
             '/components/': [
                 {
-                    text: '组件',
+                    text: '核心组件',
                     children: [
-                        '/components/meKeepAlive.md',
-                        '/components/meComponent.md',
-                        '/components/icon.md',
-
+                        '/components/core/meKeepAlive.md',
+                        '/components/core/meComponent.md',
+                        '/components/core/icon.md',
+                    ],
+                },
+                {
+                    text: '扩展组件',
+                    children: [
+                        '/components/extends/meNumber.md',
+                        '/components/extends/meWangEditor.md',
                     ],
                 },
             ],

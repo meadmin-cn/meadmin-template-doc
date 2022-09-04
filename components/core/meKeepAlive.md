@@ -15,14 +15,14 @@ vue 官方的KeepAlive缓存只支持按组件名筛选过滤，这里自定义�
 ## 使用演示
 
 这里只样式includeKey、excludeKey其余说明参考[KeepAlive](https://cn.vuejs.org/guide/built-ins/keep-alive.html)
-```
+```vue
 <me-keep-alive includeKey="a,b">
   <component :is="view" key="a" />
   <component :is="view" key="b" />
   <component :is="view" key="c" />
 </me-keep-alive>
 ```
-```
+```vue
 <me-keep-alive excludeKey="c">
   <component :is="view" key="a" />
   <component :is="view" key="b" />
