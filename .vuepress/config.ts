@@ -56,7 +56,7 @@ export default defineUserConfig({
                     },
                     {
                         text: '扩展组件',
-                        link: '/components/extends/meKeepAlive.md',
+                        link: '/components/extends/meNumber.md',
                     }]
             },
             {
