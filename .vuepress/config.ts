@@ -18,7 +18,7 @@ export default defineUserConfig({
             'meta',
             {
                 name: 'keywords',
-                content: 'meadmin, meadmin template, element-plus, vue, vite, vue3',
+                content: 'meadmin, meadmin template, admin, element-plus, vue, vite, vue3',
             },
         ],
         ['link', { rel: 'icon', type: 'image/svg+xml', href: '/logo.svg' }],
