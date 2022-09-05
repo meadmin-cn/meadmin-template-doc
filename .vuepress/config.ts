@@ -30,6 +30,26 @@ export default defineUserConfig({
                     'width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no',
             },
         ],
+        [
+            'script',{},`var _hmt = _hmt || [];
+            (function() {
+              var hm = document.createElement("script");
+              hm.src = "https://hm.baidu.com/hm.js?dbd9fa158a9fb69a5bafc89644b288cd";
+              var s = document.getElementsByTagName("script")[0]; 
+              s.parentNode.insertBefore(hm, s);
+            })();`
+        ],
+        [
+            'script',{},`var _hmt = _hmt || [];
+            (function() {
+             if(['http://www.meadmin.cn/meadmin-template-doc/','https://www.meadmin.cn/meadmin-template-doc/'].includes(window.location.href)){
+                let myHref = document.createElement('a');
+                myHref.href = 'https://beian.miit.gov.cn';
+                myHref.innerHTML='鲁ICP备16039932号-5';
+                document.getElementsByClassName('footer')[0].appendChild(myHref)
+             }
+            })();`
+        ]
     ],
     theme: defaultTheme({
         logo: '/logo.svg',
