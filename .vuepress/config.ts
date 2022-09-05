@@ -45,7 +45,7 @@ export default defineUserConfig({
              if(['http://www.meadmin.cn/meadmin-template-doc/','https://www.meadmin.cn/meadmin-template-doc/'].includes(window.location.href)){
                 let myHref = document.createElement('a');
                 myHref.href = 'https://beian.miit.gov.cn';
-                myHref.innerHTML='鲁ICP备16039932号-5';
+                myHref.innerHTML=' | 鲁ICP备16039932号-5';
                 document.getElementsByClassName('footer')[0].appendChild(myHref)
              }
             })();`
