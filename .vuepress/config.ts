@@ -83,7 +83,7 @@ export default defineUserConfig({
                 text: '社区',
                 children:[
                     {
-                        text: 'QQ群752939100',
+                        text: 'QQ群：752939100',
                         link: 'https://jq.qq.com/?_wv=1027&k=zSjWSant',
                     },
                 ]
