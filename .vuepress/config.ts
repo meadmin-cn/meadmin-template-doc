@@ -108,6 +108,14 @@ export default defineUserConfig({
                         link: 'https://gitee.com/meadmin-cn/meadmin-template',
                     },
                     {
+                        text: '文档国内地址',
+                        link: 'https://meadmin-cn.gitee.io/meadmin-template-doc/',
+                    },
+                    {
+                        text: '文档国外地址',
+                        link: 'https://meadmin-cn.github.io/meadmin-template-doc/',
+                    },
+                    {
                         text: '文档Github',
                         link: 'https://github.com/meadmin-cn/meadmin-template-doc',
                     },

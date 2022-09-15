@@ -18,7 +18,7 @@
 | customColumn | boolean |自定义列，默认为true | 否 |
 | defaultShowSearch | boolean | 默认是否展示 [筛选]() 默认值为false | 否 | 
 | toolbar | boolean | 是否展示工具栏 默认为true | 否 |
-| elTable的属性 | | 支持element-plus 的 Table 所有属性，请参考[elTable文档](https://element-plus.org/zh-CN/component/table.html#table-%E5%B1%9E%E6%80%A7)| | 
+| elTable的属性 | | 支持element-plus  Table组件 的所有属性，请参考[elTable文档](https://element-plus.org/zh-CN/component/table.html#table-%E5%B1%9E%E6%80%A7)| | 
 
 
 | props.exportMenu      | 类型 |说明|必填|
@@ -34,7 +34,7 @@
 | quickSearch | (searchText:string) => void | 快捷搜索|
 | refresh | () => void | 刷新按钮被点击时触发 |
 | add | () => void | 新增按钮被点击时触发 |
-| elTable的事件 | | 支持element-plus 的 Table 所有事件，请参考[elTable文档](https://element-plus.org/zh-CN/component/table.html#table-%E4%BA%8B%E4%BB%B6)| |
+| elTable的事件 | | 支持element-plus  Table组件 的所有事件，请参考[elTable文档](https://element-plus.org/zh-CN/component/table.html#table-%E4%BA%8B%E4%BB%B6)| |
 
 ## 组件插槽
 
