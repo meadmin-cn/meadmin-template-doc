@@ -1,6 +1,6 @@
 # 数字动画
 
-数字动画组件，基于[vueuse usetransition](https://vueuse.org/core/usetransition/#usetransition)实现。
+组件名`MeNumber`，数字动画组件，基于[vueuse usetransition](https://vueuse.org/core/usetransition/#usetransition)实现。
 
 ::: warning 注意
 - 扩展组件只存在`完整版`中，`基础模板`中不含有，如果想在基础模板中使用，请将对应文件粘贴到代码中使用。

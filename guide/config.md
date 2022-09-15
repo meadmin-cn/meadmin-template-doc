@@ -1,5 +1,15 @@
 # 配置
 
+## 基础配置
+
+配置文件地址 `@/config/index.ts`
+```ts
+const settingConfig = {
+  version: '1.0.3', //版本当版本改变时会清空localStorage和sessionStorage
+  openKeepAlive: true, // 是否开启KeepAlive缓存
+};
+```
+
 ## 登录配置
 
 登录后token会储存在在cookie中，可以在配置文件中配置token相关cookie设置

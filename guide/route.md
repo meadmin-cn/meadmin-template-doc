@@ -158,4 +158,6 @@ export const routes: RouteRecordRaw[] = [
 
 页面缓存通过 组件[me-keep-alive](/guide/components/meKeepAlive.md)实现,通过路由的fullPath进行缓存过滤，所以无需对页面组件设置name,即可进行缓存，并且多路由共用同一页面组件时，可以进行独立刷新，互不影响。
 
-keppAlive缓存默认是开启的，如需不缓存设置`meta.noCache`值为`true`即可
+
+ - 如果想全局禁用keppAlive，去`@/config/index.ts`配置`settingConfig.openKeepAlive`为`false`即可，配置详情参见[config](/guide/config.md#基础配置)。
+ - 如需设置某个路由不缓存设置`meta.noCache`值为`true`即可。

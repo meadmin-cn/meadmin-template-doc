@@ -1,5 +1,5 @@
-# meWangEditor
-集成了[WangEditor](https://www.wangeditor.com/v5/getting-started.html),编辑器默认高度为`500px`可通过样式直接覆盖更改,详细说明请参考[WangEditor 文档](https://www.wangeditor.com/v5/getting-started.html)和[用于Vue3](https://www.wangeditor.com/v5/for-frame.html#vue3)。
+# 富文本(WangEditor)
+组件名`MeWangEditor`，集成了[WangEditor](https://www.wangeditor.com/v5/getting-started.html),编辑器默认高度为`500px`可通过样式直接覆盖更改,详细说明请参考[WangEditor 文档](https://www.wangeditor.com/v5/getting-started.html)和[用于Vue3](https://www.wangeditor.com/v5/for-frame.html#vue3)。
 
 ::: warning 注意
 - 扩展组件只存在`完整版`中，`基础模板`中不含有，如果想在基础模板中使用，请将对应文件粘贴到代码中使用。

@@ -163,6 +163,7 @@ export default defineUserConfig({
                     children: [
                         '/components/extends/meNumber.md',
                         '/components/extends/meWangEditor.md',
+                        '/components/extends/meTable.md',
                     ],
                 },
             ],
