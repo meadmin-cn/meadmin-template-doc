@@ -17,7 +17,7 @@
 | disabled | boolean | 禁用动画(默认为false) |否|
 | duration | number | 动画持续时间毫秒数默认为1000 | 否|
 | transition|  EasingFunction \| keyof typeof TransitionPresets  | 动画类型默认为`'easeOutExpo'`，详细说明请参考[vueuse文档](https://vueuse.org/core/usetransition/#type-declarations) | 否 |
-|format| (number: number) => string |数字格式化函数 默认值`new Intl.NumberFormat('zh').format`，每千分位一个`,`隔开支持小数位数到3位  参考[NumberFormat文档](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat)|否|
+|format| (number: number, decimals: number) => string | number |数字格式化函数,number为当前展示数字，decimals为end的小数位数 默认值`(number: number, decimals: number) => formatNumber({ truncate: decimals, padRight: decimals })(number)`，每千分位一个`,`隔开  参考[format-number文档](https://www.npmjs.com/package/format-number)|否|
 
 ## 组件事件
 
