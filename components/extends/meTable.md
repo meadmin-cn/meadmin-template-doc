@@ -3,7 +3,8 @@
 
 ::: warning 注意
 - 扩展组件只存在`完整版`中，`基础模板`中不含有，如果想在基础模板中使用，请将对应文件粘贴到代码中使用。
-- 当前组件位置`@/components/meTable`
+- 当前组件位置`@/components/meTable`。
+- 组件对应的全局语言包文件为`src/locales/lang/en/meTable.json`。
 - 所有的非`props` `attr`不会设置到根元素,都会透传到 `ElTable`上。
 :::
 
