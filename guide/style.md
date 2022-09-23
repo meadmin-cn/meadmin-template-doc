@@ -32,11 +32,11 @@ sass 变量位于 `src/styles/variables.scss`文件中，已用`vite`的`css.pre
 - 修改large、small下的--el-font-size-base，代码位置位于`src/styles/element-plus.scss`
 
 ``` scss
-.me-large {
+.me-large:root {
   //这里强制将font-size-base设置为large
   --el-font-size-base: var(--el-font-size-large);
 }
-.me-small {
+.me-small:root {
   //这里强制将font-size-base设置为small
   --el-font-size-base: var(--el-font-size-small);
 }

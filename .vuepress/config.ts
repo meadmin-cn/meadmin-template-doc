@@ -77,7 +77,12 @@ export default defineUserConfig({
                     {
                         text: '扩展组件',
                         link: '/components/extends/meNumber.md',
-                    }]
+                    },
+                    {
+                        text: 'vite插件',
+                        link: '/components/plugin/vueSetupExtend.md',
+                    }
+                ]
             },
             {
                 text: '社区',
@@ -172,6 +177,13 @@ export default defineUserConfig({
                         '/components/extends/meNumber.md',
                         '/components/extends/meWangEditor.md',
                         '/components/extends/meTable.md',
+                        '/components/extends/meVxeTable.md',
+                    ],
+                },
+                {
+                    text: 'vite插件',
+                    children: [
+                        '/components/plugin/vueSetupExtend.md',
                     ],
                 },
             ],

@@ -19,7 +19,7 @@
 | customColumn | boolean |自定义列，默认为true | 否 |
 | defaultShowSearch | boolean | 默认是否展示 [筛选]() 默认值为false | 否 | 
 | toolbar | boolean | 是否展示工具栏 默认为true | 否 |
-| elTable的属性 | | 支持element-plus  Table组件 的所有属性，请参考[elTable文档](https://element-plus.org/zh-CN/component/table.html#table-%E5%B1%9E%E6%80%A7)| | 
+| elTable的属性 | - | 支持element-plus  Table组件 的所有属性，请参考[elTable文档](https://element-plus.org/zh-CN/component/table.html#table-%E5%B1%9E%E6%80%A7)| - | 
 
 
 | props.exportMenu      | 类型 |说明|必填|
@@ -35,18 +35,26 @@
 | quickSearch | (searchText:string) => void | 快捷搜索|
 | refresh | () => void | 刷新按钮被点击时触发 |
 | add | () => void | 新增按钮被点击时触发 |
-| elTable的事件 | | 支持element-plus  Table组件 的所有事件，请参考[elTable文档](https://element-plus.org/zh-CN/component/table.html#table-%E4%BA%8B%E4%BB%B6)| |
+| elTable的事件 | - | 支持element-plus  Table组件 的所有事件，请参考[elTable文档](https://element-plus.org/zh-CN/component/table.html#table-%E4%BA%8B%E4%BB%B6)| - |
 
 ## 组件插槽
 
 | 插槽名  |	说明  |	子标签 |
 | ----------- | ----------- | ----------- |
-| - | 和[elTable](https://element-plus.org/zh-CN/component/table.html#table-%E6%8F%92%E6%A7%BD)对应插槽功能一致。自定义默认内容 | Table-column |
+| - | 和[elTable](https://element-plus.org/zh-CN/component/table.html#table-%E6%8F%92%E6%A7%BD)对应插槽功能一致。自定义默认内容 | el-table-column |
 | append | 和[elTable](https://element-plus.org/zh-CN/component/table.html#table-%E6%8F%92%E6%A7%BD)对应插槽功能一致。插入至表格最后一行之后的内容， 如果需要对表格的内容进行无限滚动操作，可能需要用到这个 slot。 若表格有合计行，该 slot 会位于合计行之上。|	— |
 | empty	| 和[elTable](https://element-plus.org/zh-CN/component/table.html#table-%E6%8F%92%E6%A7%BD)对应插槽功能一致。当数据为空时自定义的内容|	— |
 | search | 筛选项，当点击工具栏筛选按钮时会控制其显隐 | — |
 | buttons | 工具栏左侧扩展操作按钮 | — |
-| tools | 工具栏右侧扩展工具按钮 | — |
+| tools | 工具栏右侧扩展菜单 | — |
+| toolsButton|  工具栏右侧扩展按钮 | — |
+
+## 组件属性/方法
+| 名称  |	类型  |	说明 |
+| ----------- | ----------- | ----------- |
+| elTableRef | InstanceType<typeof ElTable> | elTable的ref对象 |
+|customColumnProps | - | 动态队列的对象，可通过里面的checkedLabels属性控制列的显/隐 |
+|searchText |string | 快捷搜索关键字 |
 
 ## 示例
 
