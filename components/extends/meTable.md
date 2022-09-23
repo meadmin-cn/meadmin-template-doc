@@ -47,12 +47,12 @@
 | search | 筛选项，当点击工具栏筛选按钮时会控制其显隐 | — |
 | buttons | 工具栏左侧扩展操作按钮 | — |
 | tools | 工具栏右侧扩展菜单 | — |
-| toolsButton|  工具栏右侧扩展按钮 | — |
+| toolsButton |  工具栏右侧扩展按钮 | — |
 
 ## 组件属性/方法
 | 名称  |	类型  |	说明 |
 | ----------- | ----------- | ----------- |
-| elTableRef | InstanceType<typeof ElTable> | elTable的ref对象 |
+| elTableRef | `InstanceType<typeof ElTable>` | elTable的ref对象 |
 |customColumnProps | - | 动态队列的对象，可通过里面的checkedLabels属性控制列的显/隐 |
 |searchText |string | 快捷搜索关键字 |
 
