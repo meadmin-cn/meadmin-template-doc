@@ -79,6 +79,10 @@ export default defineUserConfig({
                         link: '/components/extends/meNumber.md',
                     },
                     {
+                        text:'服务式组件',
+                        link: '/components/service/meImageViewer.md',
+                    },
+                    {
                         text: 'vite插件',
                         link: '/components/plugin/vueSetupExtend.md',
                     }
@@ -160,6 +164,12 @@ export default defineUserConfig({
                         '/more/apiAuto.md',
                         '/more/normalize.md',
                     ]
+                },
+                {
+                    text: '其他',
+                    children: [
+                        '/other/question.md',
+                    ]
                 }
             ],
             '/components/': [
@@ -178,6 +188,12 @@ export default defineUserConfig({
                         '/components/extends/meWangEditor.md',
                         '/components/extends/meTable.md',
                         '/components/extends/meVxeTable.md',
+                    ],
+                },
+                {
+                    text: '服务式组件',
+                    children: [
+                        '/components/service/meImageViewer.md',
                     ],
                 },
                 {
