@@ -1,7 +1,7 @@
 # 介绍
 
 ## 简介 
-[Me-admin template](https://github.com/meadmin-cn/meadmin-template) 是一个免费开源的中后台模板,基于vue3、vite3、 pinia、 elment-plus构建，开箱即用，本项目的开源协议为最宽松的MIT协议，使用无任何限制，本项目采用最新技术栈，可以作为可以作为项目的启动模版，以帮助你快速搭建企业级中后台，也是一个很好的学习项目。
+[Me-admin template](https://github.com/meadmin-cn/meadmin-template) 是一个免费开源的中后台模板,基于vue3、vite3、 pinia、 elment-plus构建，开箱即用，本项目的开源协议为最宽松的MIT协议，使用无任何限制，本项目采用最新技术栈，可以作为项目的启动模版，以帮助你快速搭建企业级中后台，也是一个很好的学习项目。
 
 ## 文档
 - github:[meadmin-template-doc](https://github.com/meadmin-cn/meadmin-template-doc) 文档基于vuepress@next编写，如发现文档有误，欢迎提 pr 帮助我们改进。
