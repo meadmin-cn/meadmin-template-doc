@@ -7,6 +7,7 @@
 const settingConfig = {
   version: '1.0.3', //版本当版本改变时会清空localStorage和sessionStorage
   openKeepAlive: true, // 是否开启KeepAlive缓存
+  menuMode: MenuModeEnum.STATIC, // 动态路由模式 MenuModeEnum.STATIC/MenuModeEnum.API
 };
 ```
 

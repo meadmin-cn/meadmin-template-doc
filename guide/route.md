@@ -1,4 +1,4 @@
-# 路由
+# 路由菜单
 
 这里的路由分为两种，constantRoutes 和 asyncRoutes。
 
@@ -10,17 +10,25 @@ asyncRoutes： 代表那些需求动态判断权限并通过 addRoutes 动态添
 
 静态路由定义位于`@/router/routes/index.ts`文件下，除了不经过权限过滤外其余规则和[**动态路由定义**](#动态路由定义)规则一样
 
-## 动态路由定义
-asyncRoutes的定义位于`@/router/routes`文件夹下，`@/router/routes`文件夹下的所有.ts文件会被自动加载并经过权限过滤后动态注册到vue-router中。
+## 动态路由(asyncRoutes)
 
-路由功能基于[vue-router](https://router.vuejs.org/zh/introduction.html)开发自定义配置放在了[meta](#meta配置说明)中,其余定义规则参考[vue-router#routerecordraw](https://router.vuejs.org/zh/api/#routerecordraw)。
+- **动态定义分为前端定义、通过api接口获取两种。**
+- **动态路由会经过权限过滤后动态注册到vue-router中。**
 
+
+路由功能基于[vue-router](https://router.vuejs.org/zh/introduction.html)开发,自定义配置放在了[meta](#meta配置说明)中,其余定义规则参考[vue-router#routerecordraw](https://router.vuejs.org/zh/api/#routerecordraw)。
+
+### 动态路由前端定义模式
+
+将`settingConfig.menuMode`(位于`@/config/index.ts`文件中)设置为`MenuModeEnum.STATIC`，将使用前端定义模式。
+
+在前端定义模式下，`@/router/routes`文件夹下的所有.ts文件会被自动加载并经过权限过滤后动态注册到vue-router中。
 ::: warning 注意
 - 只会动态注册`@/router/routes`文件夹下的.ts文件 不会注册其子文件夹的.ts文件.
 - 路由注册顺序会跟进文件名按字符串顺序进行注册，建议文件命名时加上`数字-`前缀以明确菜单顺序
 :::
 
-### 定义示例
+#### 定义示例
 - **单文件路由注册示例**
 
 ```
@@ -86,6 +94,174 @@ export const routes: RouteRecordRaw[] = [
   },
 ];
 ```
+### 动态路由api获取模式
+
+将`settingConfig.menuMode`(位于`@/config/index.ts`文件中)设置为`MenuModeEnum.API`，将使用api模式。
+
+在api模式下，登录成功后或者已登录首次访问时，会通过调用接口获取菜单数组，经权限过滤后动态注册到vue-router中。
+
+#### api调用代码
+```ts
+//src/store/modules/route.ts
+async generateRoutes() {
+  if (useUserStore().rules) {
+    switch (settingConfig.menuMode) {
+      case MenuModeEnum.STATIC:
+        this.addRoutes = markRaw(filterAsyncRoutes(asyncRoutes));
+        break;
+      case MenuModeEnum.API://代表api模式
+        initDynamicViewsModules();//注册视图文件modules
+        this.addRoutes = markRaw(filterAsyncRoutes(await menuApi()(), undefined, true));//通过接口获取菜单路由定义，可修改menuApi,改为自己的api调用函数。
+        break;
+    }
+  }
+  return this.addRoutes;
+}
+```
+```ts
+//src/api/routeMenu.ts
+//获取路由菜单的api请求定义，可以修改为自己的地址
+export function menuApi(returnAxios = true) {
+  return request<RouteRecordRaw[], [], typeof returnAxios>(
+    () => ({
+      url: Api.MENU,
+      method: 'get',
+    }),
+    {},
+    returnAxios,
+  );
+}
+```
+
+#### 路由菜单接口返回示例
+- 除了`component`为string,其余字段和格式均和路由定义规则相同,详细请参考[vue-router#routerecordraw](https://router.vuejs.org/zh/api/#routerecordraw)。
+- component说明：顶级路由使用`Layout`,含有子级的非顶级路由使用`LayoutPage`，其余路由使用相对于`src/views`目录的相对地址(不可携带后缀，会自动添加.vue、.tsx进行匹配)。
+
+```ts
+[
+  {
+    path: '/index',
+    redirect: '/index/index',
+    component: 'Layout',
+    children: [
+      {
+        path: 'index',
+        component: 'dashboard/index',
+        meta: {
+          title: '首页',
+          affix: true,
+          icon: 'me-icon-dashboard',
+        },
+      },
+    ],
+    meta: {
+      title: '',
+    },
+  },
+  {
+    path: '/example',
+    component: 'Layout',
+    children: [
+      {
+        path: 'permission',
+        component: 'example/permission',
+        meta: {
+          title: '权限',
+        },
+      },
+      {
+        path: 'componentLang',
+        component: 'example/componentLang/index',
+        meta: {
+          title: '组件语言包',
+        },
+      },
+      {
+        path: 'request',
+        component: 'example/request',
+        meta: {
+          title: '请求示例',
+        },
+      },
+      {
+        path: 'https://github.com/meadmin-cn/meadmin-template',
+        component: '404',
+        meta: {
+          title: '外链',
+          isLink: true,
+        },
+      },
+      {
+        path: 'pagePermission',
+        component: 'example/pagePermission',
+        meta: {
+          title: '页面权限',
+          rule: ['edit'],
+        },
+      },
+      {
+        path: 'multilevel',
+        component: 'LayoutPage',
+        meta: {
+          title: '多级菜单',
+        },
+        children: [
+          {
+            path: '1',
+            component: 'LayoutPage',
+            meta: {
+              title: '多级菜单1',
+            },
+            children: [
+              {
+                path: '1-1',
+                component: 'LayoutPage',
+                meta: {
+                  title: '多级菜单1-1',
+                  alwaysShow: true,
+                },
+                redirect: '/example/multilevel/1/1-1/1-1-1',
+                children: [
+                  {
+                    path: '1-1-1',
+                    component: 'dashboard/index',
+                    meta: {
+                      title: '多级菜单1-1-1',
+                    },
+                  },
+                  {
+                    path: '/test/componentLang',
+                    component: 'example/componentLang/index',
+                    meta: {
+                      title: '组件语言包',
+                    },
+                  },
+                ],
+              },
+              {
+                path: '1-2',
+                component: 'dashboard/index',
+                meta: {
+                  title: '多级菜单1-2',
+                },
+              },
+            ],
+          },
+        ],
+      },
+    ],
+    meta: {
+      title: '示例',
+      icon: 'mel-icon-promotion',
+    },
+  },
+]
+
+```
+
+
+
+
 ### Meta配置说明
 ```
 export interface RouteMeta extends Record<string | number | symbol, unknown> {
