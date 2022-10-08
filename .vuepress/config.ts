@@ -81,10 +81,6 @@ export default defineUserConfig({
                     {
                         text:'服务式组件',
                         link: '/components/service/meImageViewer.md',
-                    },
-                    {
-                        text: 'vite插件',
-                        link: '/components/plugin/vueSetupExtend.md',
                     }
                 ]
             },
@@ -195,13 +191,7 @@ export default defineUserConfig({
                     children: [
                         '/components/service/meImageViewer.md',
                     ],
-                },
-                {
-                    text: 'vite插件',
-                    children: [
-                        '/components/plugin/vueSetupExtend.md',
-                    ],
-                },
+                }
             ],
         },
     }),

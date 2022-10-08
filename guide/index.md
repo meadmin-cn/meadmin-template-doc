@@ -26,9 +26,11 @@
 ## vite插件推荐
  本项目中用到的vite插件，非常好用，如果能帮到您，请点个star
 - [vite-plugin-autogeneration-import-file](https://github.com/yuntian001/vite-plugin-autogeneration-import-file) 自动生成文件，用于type文件和引入文件的自动生成
+- [@yuntian001/vue-setup-extend](https://github.com/yuntian001/vue-setup-extend) 方便给vue `<script setup>` 标签语法设置自定义属性。
 - [unplugin-auto-import](https://github.com/antfu/unplugin-auto-import) 按需自动导入Vue、Vue Router、pinia等官方Api
 - [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components) 按需自动导入组件
 - [vite-svg-loader](https://github.com/jpkleemans/vite-svg-loader) Vite插件加载SVG文件作为Vue组件，使用SVGO进行优化
+
 
 ## 浏览器兼容性
 - 由于 Vue 3 不再支持 IE11，本项目不支持 IE 浏览器。
