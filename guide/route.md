@@ -24,45 +24,75 @@ asyncRoutes： 代表那些需求动态判断权限并通过 addRoutes 动态添
 
 在前端定义模式下，`@/router/routes`文件夹下的所有.ts文件会被自动加载并经过权限过滤后动态注册到vue-router中。
 ::: warning 注意
-- 只会动态注册`@/router/routes`文件夹下的.ts文件 不会注册其子文件夹的.ts文件.
-- 路由注册顺序会跟进文件名按字符串顺序进行注册，建议文件命名时加上`数字-`前缀以明确菜单顺序
+- 只会动态注册`@/router/routes`文件夹下的.ts文件 不会注册其子文件夹的.ts文件。
+- 路由注册顺序会根据文件名按**字符串顺序**进行注册，建议文件命名时加上`数字-`前缀以明确菜单顺序。
+- 菜单路由至少需要两级，默认只有一个children的菜单会省略父级菜单。
+- component说明：顶级路由使用`Layout`,含有子级的非顶级路由使用`LayoutPage`(如果只有两级则省略)，最低级路由使用自己的view组件。
 :::
 
 #### 定义示例
 - **单文件路由注册示例**
 
-```
+1. 二级路由示例
+```ts
+import { RouteRecordRaw } from 'vue-router';
+import Layout from '@/layout/index.vue';
+export const routes: RouteRecordRaw[] = [
+  {
+    path: '/example',
+    component: Layout,
+    children: [
+      {
+        path: '/example/test',
+        component: () => import('@/views/dashboard/index.vue'),
+        meta: { title: 'test示例'},
+      },
+    ],
+    meta: { title: '示例', icon: 'mel-icon-promotion' },
+  },
+];
+```   
+2. 多级路由示例
+```ts
 import { RouteRecordRaw, RouterView } from 'vue-router';
+import Layout from '@/layout/index.vue';
 import LayoutPage from '@/layout/components/page.vue';
 export const routes: RouteRecordRaw[] = [
   {
-    path: '1',
-    component: LayoutPage,
-    meta: { title: '多级菜单1' },
+    path: '/example',
+    component: Layout,
     children: [
-      {
-        path: '1-1',
-        component: LayoutPage,
-        meta: { title: '多级菜单1-1', alwaysShow: true },
-        children: [
-          {
-            path: '1-1-1',
-            component: () => import('@/views/dashboard/index.vue'),
-            meta: { title: '多级菜单1-1-1' },
-          },
-          {
-            path: '/test/componentLang',
-            component: async () => await import('@/views/example/componentLang/index.vue'),
-            meta: { title: '组件语言包' },
-          },
-        ],
-      },
-      {
-        path: '1-2',
-        component: () => import('@/views/dashboard/index.vue'),
-        meta: { title: '多级菜单1-2' },
-      },
+       {
+          path: '1',
+          component: LayoutPage,
+          meta: { title: '多级菜单1' },
+          children: [
+            {
+              path: '1-1',
+              component: LayoutPage,
+              meta: { title: '多级菜单1-1', alwaysShow: true },
+              children: [
+                {
+                  path: '1-1-1',
+                  component: () => import('@/views/dashboard/index.vue'),
+                  meta: { title: '多级菜单1-1-1' },
+                },
+                {
+                  path: '/test/componentLang',
+                  component: async () => await import('@/views/example/componentLang/index.vue'),
+                  meta: { title: '组件语言包' },
+                },
+              ],
+            },
+            {
+              path: '1-2',
+              component: () => import('@/views/dashboard/index.vue'),
+              meta: { title: '多级菜单1-2' },
+            },
+          ],
+        },
     ],
+    meta: { title: '示例', icon: 'mel-icon-promotion' },
   },
 ];
 ```
@@ -70,7 +100,7 @@ export const routes: RouteRecordRaw[] = [
 - **文件+文件夹组合注册示例**
   
 父级路由`@/router/routes/example.ts`
-```
+```ts
 import { RouteRecordRaw } from 'vue-router';
 import Layout from '@/layout/index.vue';
 import { concatObjectValue } from '@/utils/helper';
@@ -84,11 +114,11 @@ export const routes: RouteRecordRaw[] = [
 ];
 ```
 子路由 `@/router/routes/example/1-test.ts`
-```
+```ts
 import { RouteRecordRaw } from 'vue-router';
 export const routes: RouteRecordRaw[] = [
   {
-    path: '/example',
+    path: '/example/test',
     component: () => import('@/views/dashboard/index.vue'),
     meta: { title: 'test示例'},
   },
@@ -135,7 +165,8 @@ export function menuApi(returnAxios = true) {
 
 #### 路由菜单接口返回示例
 - 除了`component`为string,其余字段和格式均和路由定义规则相同,详细请参考[vue-router#routerecordraw](https://router.vuejs.org/zh/api/#routerecordraw)。
-- component说明：顶级路由使用`Layout`,含有子级的非顶级路由使用`LayoutPage`，其余路由使用相对于`src/views`目录的相对地址(不可携带后缀，会自动添加.vue、.tsx进行匹配)。
+- 菜单路由至少需要两级，默认只有一个children的菜单会省略父级菜单。
+- component说明：顶级路由使用`Layout`,含有子级的非顶级路由使用`LayoutPage`，最低级路由使用相对于`src/views`目录的相对地址(不可携带后缀，会自动添加.vue、.tsx进行匹配)。
 
 ```ts
 [
