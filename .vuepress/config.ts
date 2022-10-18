@@ -65,7 +65,12 @@ export default defineUserConfig({
                     {
                         text: '深入',
                         link: '/more/components.md',
-                    }]
+                    },
+                    {
+                        text: '其他',
+                        link: '/other/question.md',
+                    }
+                ]
             },
             {
                 text: '组件',
