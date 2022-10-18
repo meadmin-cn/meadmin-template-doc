@@ -39,7 +39,7 @@ const { themeConfig } = useSettingStore();
 }
 </style>
 ```
-## 公共组件自动引入
+## 公共组件自动按需引入
 - 在`@/components`文件夹下符合`['*.vue', '**/index.{vue,ts}']` `glob`规则的文件会被自动识别为公共组件，在使用时可直接使用，编译时会自动引入，组件名规则为相对于`@/components`并去除结尾的(index、Index)的大驼峰名称，最终名称可去类型声明文件中确认。
 - 公共组件会自动创建类型声明，类型声明文件位于`types/components.d.ts`。
 
