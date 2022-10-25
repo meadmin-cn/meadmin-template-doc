@@ -39,8 +39,8 @@ vue 官方的KeepAlive缓存只支持按组件名筛选过滤，这里自定义�
 ```
 import { Transition } from 'vue';
 const transitionProps={};
-const meKeepAlivenProps={};
+const meKeepAliveProps={};
 h(Transition, transitionProps, { 
-  default: () => h(MeKeepAlive, meKeepAlivenProps, [componentOptions])
+  default: () => h(MeKeepAlive, meKeepAliveProps, [componentOptions])
 })
 ```
