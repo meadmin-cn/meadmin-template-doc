@@ -36,7 +36,7 @@ asyncRoutes： 代表那些需求动态判断权限并通过 addRoutes 动态添
 1. 二级路由示例
 ```ts
 import { RouteRecordRaw } from 'vue-router';
-import Layout from '@/layout/index.vue';
+import { Layout } from '@/router/constant';
 export const routes: RouteRecordRaw[] = [
   {
     path: '/example',
@@ -55,8 +55,7 @@ export const routes: RouteRecordRaw[] = [
 2. 多级路由示例
 ```ts
 import { RouteRecordRaw, RouterView } from 'vue-router';
-import Layout from '@/layout/index.vue';
-import LayoutPage from '@/layout/components/page.vue';
+import { Layout, LayoutPage } from '@/router/constant';
 export const routes: RouteRecordRaw[] = [
   {
     path: '/example',
@@ -102,7 +101,7 @@ export const routes: RouteRecordRaw[] = [
 父级路由`@/router/routes/example.ts`
 ```ts
 import { RouteRecordRaw } from 'vue-router';
-import Layout from '@/layout/index.vue';
+import { Layout } from '@/router/constant';
 import { concatObjectValue } from '@/utils/helper';
 export const routes: RouteRecordRaw[] = [
   {
