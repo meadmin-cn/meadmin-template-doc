@@ -33,8 +33,8 @@
 |props.paginationOptions| 类型 |说明|必填|
 | ----------- | ----------- | ----------- | ----------- |
 | noAutoLayout | boolean | 默认为手机模式时使用最小layout,设置为true关闭此配置 | 否 |
-| onChange | (page: number, size: number) => void | page或size改变时触发 | 否 |
-| pagination的属性 | - | 支持element-plus  Pagination组件 的所有属性，请参考[pagination文档](https://element-plus.gitee.io/zh-CN/component/pagination.html#%E5%B1%9E%E6%80%A7)(currentPage、pageSize属性需要用computedProxy进行双向绑定) | - |
+| change | (page: number, size: number) => void | page或size改变时触发 | 是 |
+| pagination的属性 | - | 支持element-plus  Pagination组件 的所有属性，请参考[pagination文档](https://element-plus.gitee.io/zh-CN/component/pagination.html#%E5%B1%9E%E6%80%A7) | - |
 | pagination的事件 | function |  支持element-plus  Pagination组件 的所有事件，请参考[pagination文档](https://element-plus.gitee.io/zh-CN/component/pagination.html#%E4%BA%8B%E4%BB%B6)(需要在事件名前面加上on前缀并使用驼峰写法如`prev-click`事件属性名为`onPrevClick`)  | - | 
 
 ## 组件事件
@@ -225,7 +225,6 @@ import { VxeTablePropTypes } from 'vxe-table';
 import XEUtils from 'xe-utils';
 import { FormInstance } from 'element-plus';
 import { listApi } from '@/api/vxeTable';
-import computedProxy from '@/hooks/core/computedProxy';
 const meVxeTableRef = ref<MeVxeTableInstance>();
 const xTable = computed(() => meVxeTableRef.value?.vxeTableRef);
 const restaurants = [
@@ -363,14 +362,14 @@ const searchForm = reactive({
   size: 10,
 });
 const { loading, run, data } = listApi({ defaultParams: [searchForm], manual: false });
-const getData = (page = searchForm.page) => {
-  run(Object.assign(searchForm, { page }));
+const getData = (page = searchForm.page, size = searchForm.size) => {
+  run(Object.assign(searchForm, { page, size }));
 };
 const paginationOptions = reactive({
-  currentPage: computedProxy(searchForm, 'page'),
-  pageSize: computedProxy(searchForm, 'size'),
+  currentPage: computed(() => searchForm.page),
+  pageSize: computed(() => searchForm.size),
   total: computed(() => data.value?.count ?? 0),
-  onChange: getData,
+  change: getData,
 });
 const print = ref({} as object | boolean);
 </script>

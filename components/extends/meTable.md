@@ -35,8 +35,8 @@
 |props.paginationOptions| 类型 |说明|必填|
 | ----------- | ----------- | ----------- | ----------- |
 | noAutoLayout | boolean | 默认为手机模式时使用最小layout,设置为true关闭此配置 | 否 |
-| onChange | (page: number, size: number) => void | page或size改变时触发 | 否 |
-| pagination的属性 | - | 支持element-plus  Pagination组件 的所有属性，请参考[pagination文档](https://element-plus.gitee.io/zh-CN/component/pagination.html#%E5%B1%9E%E6%80%A7)(currentPage、pageSize属性需要用computedProxy进行双向绑定) | - |
+| change | (page: number, size: number) => void | page或size改变时触发 | 是 |
+| pagination的属性 | - | 支持element-plus  Pagination组件 的所有属性，请参考[pagination文档](https://element-plus.gitee.io/zh-CN/component/pagination.html#%E5%B1%9E%E6%80%A7) | - |
 | pagination的事件 | function |  支持element-plus  Pagination组件 的所有事件，请参考[pagination文档](https://element-plus.gitee.io/zh-CN/component/pagination.html#%E4%BA%8B%E4%BB%B6)(需要在事件名前面加上on前缀并使用驼峰写法如`prev-click`事件属性名为`onPrevClick`)  | - | 
 
 ## 组件事件
@@ -116,8 +116,8 @@
         <el-button @click="canDel = !canDel">{{ t('删除切换') }}</el-button>
         <el-button @click="customColumn = !customColumn">{{ t('自定义列') }}</el-button>
         <el-button @click="meTableRef!.elTableRef!.toggleAllSelection()">{{ t('全选') }}</el-button>
-        <el-button @click="paginationOptions.currentPage--">{{ t('上一页') }}</el-button>
-        <el-button @click="paginationOptions.currentPage++">{{ t('下一页') }}</el-button>
+        <el-button @click="getData(searchForm.page - 1)">{{ t('上一页') }}</el-button>
+        <el-button @click="getData(searchForm.page + 1)">{{ t('下一页') }}</el-button>
       </template>
       <el-table-column type="selection" label="选择" width="55" />
       <el-table-column prop="date" :label="t('日期')"> </el-table-column>
@@ -146,7 +146,6 @@
 </template>
 <script setup lang="ts" name="Table">
 import { listApi } from '@/api/table';
-import computedProxy from '@/hooks/core/computedProxy';
 import { useLocalesI18n } from '@/locales/i18n';
 import { FormInstance } from 'element-plus';
 const meTableRef = ref<MeTableInstance>();
@@ -164,15 +163,15 @@ const searchForm = reactive({
   size: 10,
 });
 const { loading, run, data, refresh } = listApi({ defaultParams: [searchForm], manual: false });
-const getData = (page = searchForm.page) => {
-  run(Object.assign(searchForm, { page }));
+const getData = (page = searchForm.page, size = searchForm.size) => {
+  run(Object.assign(searchForm, { page, size }));
 };
 const paginationOptions = reactive({
-  currentPage: computedProxy(searchForm, 'page'),
-  pageSize: computedProxy(searchForm, 'size'),
+  currentPage: computed(() => searchForm.page),
+  pageSize: computed(() => searchForm.size),
   total: computed(() => data.value?.count ?? 0),
   layout: 'sizes, prev, pager, next, jumper, ->, total',
-  onChange: getData
+  change: getData,
 });
 </script>
 <style lang="scss" scoped>
@@ -186,6 +185,7 @@ const paginationOptions = reactive({
   }
 }
 </style>
+
 ```
 
 ![](/meTable.png)
