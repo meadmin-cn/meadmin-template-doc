@@ -189,6 +189,8 @@ export default defineUserConfig({
                         '/components/extends/meWangEditor.md',
                         '/components/extends/meTable.md',
                         '/components/extends/meVxeTable.md',
+                        '/components/extends/meDialog.md',
+
                     ],
                 },
                 {
