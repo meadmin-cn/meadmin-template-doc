@@ -29,7 +29,7 @@ features:
     details: 基于vue-request+axios的request api封装和vue3响应式语法糖深度耦合。
   - title: Mock 数据
     details: 内置mock数据方案便于测试。
-  - title: 免费开源
-    details: 基于最宽松的MIT开源协议，完全免费。
+  - title: 集成vxeTable
+    details: 功能最完善的国人开源vue table组件`vxeTable`的封装集成。
 footer: MIT Licensed | Copyright © 2022-present Meadmin
 ---
