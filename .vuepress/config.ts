@@ -190,7 +190,7 @@ export default defineUserConfig({
                         '/components/extends/meTable.md',
                         '/components/extends/meVxeTable.md',
                         '/components/extends/meDialog.md',
-
+                        '/components/extends/meSearchForm.md',
                     ],
                 },
                 {
