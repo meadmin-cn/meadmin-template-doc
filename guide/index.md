@@ -12,7 +12,7 @@
 - [meadmin-template template分支](https://github.com/meadmin-cn/meadmin-template/tree/template) 基础模板只含基础功能
 
 ## 特性
- - **基于vue3、vite40、pinia、elment-plus、vue-request@next**
+ - **基于vue3、vite4、pinia、elment-plus、vue-request@next**
  - **基于typescript** 应用级JavaScript 的语言
  - **可配置主题** 可配置主题色及主题模式
  - **友好的国际化方案** 基于vue-i18n 支持按组件异步加载语言包。
