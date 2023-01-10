@@ -1,7 +1,7 @@
 # 介绍
 
 ## 简介 
-[Me-admin template](https://github.com/meadmin-cn/meadmin-template) 是一个免费开源的中后台模板,基于vue3、vite3、 pinia、 elment-plus构建，开箱即用，本项目的开源协议为最宽松的MIT协议，使用无任何限制，本项目采用最新技术栈，可以作为项目的启动模版，以帮助你快速搭建企业级中后台，也是一个很好的学习项目。
+[Me-admin template](https://github.com/meadmin-cn/meadmin-template) 是一个免费开源的中后台模板,基于vue3、vite4、 pinia、 elment-plus构建，开箱即用，本项目的开源协议为最宽松的MIT协议，使用无任何限制，本项目采用最新技术栈，可以作为项目的启动模版，以帮助你快速搭建企业级中后台，也是一个很好的学习项目。
 
 ## 文档
 - github:[meadmin-template-doc](https://github.com/meadmin-cn/meadmin-template-doc) 文档基于vuepress@next编写，如发现文档有误，欢迎提 pr 帮助我们改进。
@@ -12,12 +12,12 @@
 - [meadmin-template template分支](https://github.com/meadmin-cn/meadmin-template/tree/template) 基础模板只含基础功能
 
 ## 特性
- - **基于vue3、vite3、pinia、elment-plus、vue-request@next**
+ - **基于vue3、vite40、pinia、elment-plus、vue-request@next**
  - **基于typescript** 应用级JavaScript 的语言
  - **可配置主题** 可配置主题色及主题模式
  - **友好的国际化方案** 基于vue-i18n 支持按组件异步加载语言包。
  - **自定义keepAlive缓存** 可根据key进行vue keep-alive,解决不同路由统一组件不能独立刷新缓存问题
- - **权限** 内置完善的动态路由权限生成方案
+ - **权限** 内置完善的动态路由权限生成方案，按钮级权限。支持前端菜单和接口动态获取菜单两种模式
  - **Mock 数据** 内置mock数据方案便于测试
  - **组件自动按需引入** 自动按需引入components下的组件定义,支持自定义引入位置和模式，真正的按需引入。
  - **便捷的类型自动生成** 自动生成ts type 最大程度减少工作量
