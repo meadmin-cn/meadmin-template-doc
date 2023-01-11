@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="VuePress 2.0.0-beta.51">
+    <style>
+      :root {
+        --c-bg: #fff;
+      }
+      html.dark {
+        --c-bg: #22272e;
+      }
+      html, body {
+        background-color: var(--c-bg);
+      }
+    </style>
+    <script>
+      const userMode = localStorage.getItem('vuepress-color-scheme');
+			const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+			if (userMode === 'dark' || (userMode !== 'light' && systemDarkMode)) {
+				document.documentElement.classList.toggle('dark', true);
+			}
+    </script>
+    <meta name="author" content="meadmin-cn"><meta name="keywords" content="meadmin, meadmin template, admin, element-plus, vue, vite, vue3"><link rel="icon" type="image/svg+xml" href="/logo.svg"><meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"><script>var _hmt = _hmt || [];
+            (function() {
+              var hm = document.createElement("script");
+              hm.src = "https://hm.baidu.com/hm.js?dbd9fa158a9fb69a5bafc89644b288cd";
+              var s = document.getElementsByTagName("script")[0]; 
+              s.parentNode.insertBefore(hm, s);
+            })();</script><script>var _hmt = _hmt || [];
+            (function() {
+             if(['http://www.meadmin.cn/meadmin-template-doc/','https://www.meadmin.cn/meadmin-template-doc/'].includes(window.location.href)){
+                let myHref = document.createElement('a');
+                myHref.href = 'https://beian.miit.gov.cn';
+                myHref.innerHTML=' | 鲁ICP备16039932号-5';
+                document.getElementsByClassName('footer')[0].appendChild(myHref)
+             }
+            })();</script><title>Meadmin-template</title><meta name="description" content="基于vue3的中后台模板">
+    <link rel="modulepreload" href="/meadmin-template-doc/assets/app.ef09780b.js"><link rel="modulepreload" href="/meadmin-template-doc/assets/404.html.b2b09ecf.js"><link rel="modulepreload" href="/meadmin-template-doc/assets/404.html.a64979ae.js"><link rel="prefetch" href="/meadmin-template-doc/assets/index.html.be877491.js"><link rel="prefetch" href="/meadmin-template-doc/assets/config.html.a50b4e9b.js"><link rel="prefetch" href="/meadmin-template-doc/assets/i18n.html.585dbffe.js"><link rel="prefetch" href="/meadmin-template-doc/assets/icon.html.0e4e0764.js"><link rel="prefetch" href="/meadmin-template-doc/assets/index.html.6bd52f52.js"><link rel="prefetch" href="/meadmin-template-doc/assets/permission.html.013e9fd1.js"><link rel="prefetch" href="/meadmin-template-doc/assets/request.html.b11b23b2.js"><link rel="prefetch" href="/meadmin-template-doc/assets/route.html.9368bc42.js"><link rel="prefetch" href="/meadmin-template-doc/assets/started.html.14957419.js"><link rel="prefetch" href="/meadmin-template-doc/assets/style.html.04747445.js"><link rel="prefetch" href="/meadmin-template-doc/assets/apiAuto.html.48c70cf7.js"><link rel="prefetch" href="/meadmin-template-doc/assets/components.html.8d5cff9b.js"><link rel="prefetch" href="/meadmin-template-doc/assets/normalize.html.f8541fae.js"><link rel="prefetch" href="/meadmin-template-doc/assets/pinia.html.969034a9.js"><link rel="prefetch" href="/meadmin-template-doc/assets/vsTemplate.html.1fbdc944.js"><link rel="prefetch" href="/meadmin-template-doc/assets/question.html.dba33fad.js"><link rel="prefetch" href="/meadmin-template-doc/assets/icon.html.606608fb.js"><link rel="prefetch" href="/meadmin-template-doc/assets/meComponent.html.d0f1ba3f.js"><link rel="prefetch" href="/meadmin-template-doc/assets/meKeepAlive.html.5301be0b.js"><link rel="prefetch" href="/meadmin-template-doc/assets/meDialog.html.0da0a24f.js"><link rel="prefetch" href="/meadmin-template-doc/assets/meNumber.html.cabb3952.js"><link rel="prefetch" href="/meadmin-template-doc/assets/meSearchForm.html.cd2b5f9b.js"><link rel="prefetch" href="/meadmin-template-doc/assets/meTable.html.c03f35a2.js"><link rel="prefetch" href="/meadmin-template-doc/assets/meVxeTable.html.fb0063a4.js"><link rel="prefetch" href="/meadmin-template-doc/assets/meWangEditor.html.eda023e5.js"><link rel="prefetch" href="/meadmin-template-doc/assets/meImageViewer.html.94c3a536.js"><link rel="prefetch" href="/meadmin-template-doc/assets/index.html.4647588c.js"><link rel="prefetch" href="/meadmin-template-doc/assets/config.html.5c420b66.js"><link rel="prefetch" href="/meadmin-template-doc/assets/i18n.html.f441ce4f.js"><link rel="prefetch" href="/meadmin-template-doc/assets/icon.html.ac58e61b.js"><link rel="prefetch" href="/meadmin-template-doc/assets/index.html.e1124d9a.js"><link rel="prefetch" href="/meadmin-template-doc/assets/permission.html.f1baa44b.js"><link rel="prefetch" href="/meadmin-template-doc/assets/request.html.ecac830c.js"><link rel="prefetch" href="/meadmin-template-doc/assets/route.html.39072307.js"><link rel="prefetch" href="/meadmin-template-doc/assets/started.html.5bcc9883.js"><link rel="prefetch" href="/meadmin-template-doc/assets/style.html.c3e6307a.js"><link rel="prefetch" href="/meadmin-template-doc/assets/apiAuto.html.0b571bc2.js"><link rel="prefetch" href="/meadmin-template-doc/assets/components.html.a67f32fa.js"><link rel="prefetch" href="/meadmin-template-doc/assets/normalize.html.59163eec.js"><link rel="prefetch" href="/meadmin-template-doc/assets/pinia.html.3ee3482d.js"><link rel="prefetch" href="/meadmin-template-doc/assets/vsTemplate.html.f1e70d2f.js"><link rel="prefetch" href="/meadmin-template-doc/assets/question.html.4fa84485.js"><link rel="prefetch" href="/meadmin-template-doc/assets/icon.html.d24e9ec6.js"><link rel="prefetch" href="/meadmin-template-doc/assets/meComponent.html.41f99fca.js"><link rel="prefetch" href="/meadmin-template-doc/assets/meKeepAlive.html.d4f5732f.js"><link rel="prefetch" href="/meadmin-template-doc/assets/meDialog.html.504c8a78.js"><link rel="prefetch" href="/meadmin-template-doc/assets/meNumber.html.8f6a2dbd.js"><link rel="prefetch" href="/meadmin-template-doc/assets/meSearchForm.html.042abc0d.js"><link rel="prefetch" href="/meadmin-template-doc/assets/meTable.html.9a0e0a05.js"><link rel="prefetch" href="/meadmin-template-doc/assets/meVxeTable.html.8b34f6b3.js"><link rel="prefetch" href="/meadmin-template-doc/assets/meWangEditor.html.dba7b7ac.js"><link rel="prefetch" href="/meadmin-template-doc/assets/meImageViewer.html.c6f22fcc.js">
+    <link rel="stylesheet" href="/meadmin-template-doc/assets/style.8c3ae925.css">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme-container"><main class="page"><div class="theme-default-content"><h1>404</h1><blockquote>There&#39;s nothing here.</blockquote><a href="/meadmin-template-doc/" class="">Take me home</a></div></main></div><!----><!--]--></div>
+    <script type="module" src="/meadmin-template-doc/assets/app.ef09780b.js" defer></script>
+  </body>
+</html>

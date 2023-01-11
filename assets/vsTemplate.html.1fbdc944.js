@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-20fd52be","path":"/more/vsTemplate.html","title":"\u914D\u7F6Evscode\u6A21\u677F\u7247\u6BB5","lang":"zh-cn","frontmatter":{},"excerpt":"","headers":[],"git":{"updatedTime":1673358177000,"contributors":[{"name":"zhangjiayun","email":"zhangjiayun@homedo.com","commits":2}]},"filePathRelative":"more/vsTemplate.md"}');export{e as data};
