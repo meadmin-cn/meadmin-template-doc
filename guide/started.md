@@ -30,6 +30,7 @@
 .
 ├── dist 打包文件夹
 ├── mock mock文件夹
+├── plugin vite插件
 ├── public 公共静态资源目录
 ├── src  主目录
 │   ├── api 接口文件
@@ -42,7 +43,7 @@
 │   │   ├── login.ts  登录配置
 │   │   └── theme.ts  主题配置
 │   ├── directives 指令（里面的指令会自动引入）
-│   ├── enums  枚举/常量
+│   ├── dict  字典
 │   ├── event 事件
 |   ├── hooks 公共hooks
 │   ├── icons 图标
