@@ -30,7 +30,7 @@
 .
 ├── dist 打包文件夹
 ├── mock mock文件夹
-├── plugin vite插件
+├── plugins vite插件
 ├── public 公共静态资源目录
 ├── src  主目录
 │   ├── api 接口文件
