@@ -82,5 +82,5 @@
 ## husky自动化
 安装时不使用`npm install`直接使用`npm run i `,或者初始化后在当前目录下运行`npx husky install`会自动生成生成`husky`对应的git hook`husky`会在git提交时进行以下操作:
 - 自动运行`prettier --write`进行代码格式化
-- 自动校验`eslint`,如果不符合`eslint`规范会报错并停止提交
-- 自动校验提交`message`是否符合`conventionalcommits`规范，如果不符合会报错并退出
+- 自动运行`eslint --cache --fix`进行`eslint`校验和修复,如果无法修复会报错并停止提交
+- 自动校验提交`message`是否符合`conventionalcommits`规范，如果不符合会报错并停止提交

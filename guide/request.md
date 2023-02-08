@@ -84,7 +84,7 @@ return options?.needAll ? res : res.data;
 | needAll | boolean | 返回完整的返回值忽略格式化返回值（默认返回的是data字段） | 否 |
 | noLoading | boolean | 不需要lodaing | 否 |
 | noError | boolean | 不需要报错 | 否 |
-| ... vue-request options | [vue-request options](https://next.cn.attojs.org/api/#options) | 跟多字段参考[vue-request options](https://next.cn.attojs.org/api/#options) 文档| 否 |
+| ... vue-request options | [vue-request options](https://next.cn.attojs.org/api/#options) | 更多字段参考[vue-request options](https://next.cn.attojs.org/api/#options) 文档| 否 |
 
 ## 使用示例
 
