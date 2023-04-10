@@ -165,6 +165,8 @@ export default defineUserConfig({
                         '/more/apiAuto.md',
                         '/more/normalize.md',
                         '/more/vsTemplate.md',
+                        '/more/setUp.md',
+
                     ]
                 },
                 {

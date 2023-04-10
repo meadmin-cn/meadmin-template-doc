@@ -10,10 +10,12 @@
 
 | props      | 类型 |说明|必填|
 | ----------- | ----------- | ----------- | ----------- |
-| inline | boolean | 默认值为`true`,行内表单模式 | 否 |
+| forever| number | 收起后展示的筛选项数量,为0表示不收起，默认为1| 否 |
 | defaultAll | boolean | 默认值为`false` ，默认展开所有筛选  | 否 |
 | searchText | string | 默认值为'查询' 查询按钮文案，当值为`undefined`时不展示查询按钮 | 否 |
 | resetText |  string | 默认值为'重置' 重置按钮文案，当值为`undefined`时不展示重置按钮 | 否 |
+| labelWidth |  string| label宽度默认80px | 否 |
+| labelPosition| `left`\|`right`| label展示位置 默认right | 否 |
 | elForm的属性 | - | 支持element-plus  Form组件 的所有属性，请参考[elForm文档](https://element-plus.org/zh-CN/component/form.html#form-%E5%B1%9E%E6%80%A7)| - | 
 
 ## 组件事件
@@ -28,7 +30,6 @@
 | 插槽名  |	说明  |	子标签 |
 | ----------- | ----------- | ----------- |
 | - | 自定义默认内容。和[elForm](https://element-plus.org/zh-CN/component/form.html#form-%E6%8F%92%E6%A7%BD)对应插槽功能一致。 | FormItem |
-| more | 展开/收起 按钮控制显隐的内容(通过v-show控制),不存在当前插槽时不展示更多按钮 | FormItem |
 | button | 尾部按钮 | - |
 
 
