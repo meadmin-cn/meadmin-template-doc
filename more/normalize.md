@@ -104,4 +104,4 @@
 - 自动运行`eslint --cache --fix`进行`eslint`校验和修复,如果无法修复会报错并停止提交
 - 自动校验提交`message`是否符合`conventionalcommits`规范，如果不符合会报错并停止提交
  ### husky 在linux/mac下不生效
- husky目前有一个bug, windows下创建的hooks 当在linux/macos下拉取后即使执行了`husky install`也不能成功调用，需要单独执行下`chmod ug+x .husky/*` 赋予脚本执行权限对应[issue](https://github.com/typicode/husky/issues/1177)
+ husky目前有一个bug, windows下创建的hooks 当在linux/macos下拉取后即使执行了`husky install`也不能成功调用，需要单独执行下`chmod ug+x .husky/*` 赋予脚本执行权限。对应的[issue](https://github.com/typicode/husky/issues/1177)

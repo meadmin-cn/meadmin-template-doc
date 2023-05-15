@@ -75,8 +75,11 @@ vue3虽然没要求必须有根元素，但[`<Transition>`](https://cn.vuejs.org
 
 ## 如何查看示例接口的出入参格式
 1. 在mock/apiDemo/直接查看接口定义
+   
    接口请求都是通过mockjs模拟的 对应的定义文件在`mock/apiDemo/`文件夹下
 2. dev模式下启动官方示例 在 network直接查看请求即可
+   
    当中dev模式下 `@meadmin-cn/vite-plugin-mock`插件会启动后端服务，对应的请求都是正常发出不经过mockjs拦截可直接在network调试。
 3. 在src/api中 看对应的返回值入参定义
+   
    当前项目是ts项目直接看接口函数的对应ts定义即可得知对应的即可出入参格式
