@@ -14,6 +14,7 @@ asyncRoutes： 代表那些需求动态判断权限并通过 addRoutes 动态添
 
 - **动态定义分为前端定义、通过api接口获取两种。**
 - **动态路由会经过权限过滤后动态注册到vue-router中。**
+- **动态路由注册时会自动注册到一级路由`/`的children下,这样菜单路由只有一级也可以渲染出layout框架**
 
 
 路由功能基于[vue-router](https://router.vuejs.org/zh/introduction.html)开发,自定义配置放在了[meta](#meta配置说明)中,其余定义规则参考[vue-router#routerecordraw](https://router.vuejs.org/zh/api/#routerecordraw)。
@@ -26,8 +27,8 @@ asyncRoutes： 代表那些需求动态判断权限并通过 addRoutes 动态添
 ::: warning 注意
 - 只会动态注册`@/router/routes`文件夹下的.ts文件 不会注册其子文件夹的.ts文件。
 - 路由注册顺序会根据文件名按**字符串顺序**进行注册，建议文件命名时加上`数字-`前缀以明确菜单顺序。
-- 菜单路由至少需要两级，默认只有一个children的菜单会省略父级菜单。
-- component说明：顶级路由使用`Layout`,含有子级的非顶级路由使用`LayoutPage`(如果只有两级则省略)，最低级路由使用自己的view组件。
+- 默认只有一个children的菜单会省略父级菜单。
+- component说明：目录路由使用`Layout`,最低级路由使用自己的view组件。
 :::
 
 #### 定义示例
@@ -55,7 +56,7 @@ export const routes: RouteRecordRaw[] = [
 2. 多级路由示例
 ```ts
 import { RouteRecordRaw, RouterView } from 'vue-router';
-import { Layout, LayoutPage } from '@/router/constant';
+import { Layout } from '@/router/constant';
 export const routes: RouteRecordRaw[] = [
   {
     path: '/example',
@@ -164,8 +165,8 @@ export function menuApi(returnAxios = true) {
 
 #### 路由菜单接口返回示例
 - 除了`component`为string,其余字段和格式均和路由定义规则相同,详细请参考[vue-router#routerecordraw](https://router.vuejs.org/zh/api/#routerecordraw)。
-- 菜单路由至少需要两级，默认只有一个children的菜单会省略父级菜单。
-- component说明：顶级路由使用`Layout`,含有子级的非顶级路由使用`LayoutPage`，最低级路由使用相对于`src/views`目录的相对地址(不可携带后缀，会自动添加.vue、.tsx进行匹配)。
+- 默认只有一个children的菜单会省略父级菜单。
+- component说明：目录路由使用`Layout`,最低级路由使用相对于`src/views`目录的相对地址(不可携带后缀，会自动添加.vue、.tsx进行匹配)。
 
 ```ts
 [
@@ -231,21 +232,21 @@ export function menuApi(returnAxios = true) {
       },
       {
         path: 'multilevel',
-        component: 'LayoutPage',
+        component: 'Layout',
         meta: {
           title: '多级菜单',
         },
         children: [
           {
             path: '1',
-            component: 'LayoutPage',
+            component: 'Layout',
             meta: {
               title: '多级菜单1',
             },
             children: [
               {
                 path: '1-1',
-                component: 'LayoutPage',
+                component: 'Layout',
                 meta: {
                   title: '多级菜单1-1',
                   alwaysShow: true,
@@ -321,7 +322,7 @@ export interface RouteMeta extends Record<string | number | symbol, unknown> {
     // 若你想不管路由下面的 children 声明的个数都显示你的根路由
     // 你可以设置 alwaysShow: true，这样它就会忽略之前定义的规则，一直显示根路由
     alwaysShow?: boolean;
-    // 是否需要面包屑false不需要 ture或undefined为需要
+    // 是否需要面包屑 false不展示在面包屑,ture一直展示在面包屑,undefined当只有一个子元素面包屑时跳过展示
     breadcrumb?: boolean;
   }
 ```
