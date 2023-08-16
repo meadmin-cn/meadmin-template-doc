@@ -130,8 +130,8 @@ export function listApi() {
 </template>
 <script setup lang="ts" name="request">
 import { listApi } from '@/api/example';
-const { run, loading, error, data } = listApi();
-run({page:1,size:10});//请求接口
+const { runAsync, loading, error, data } = listApi();
+runAsync({page:1,size:10});//请求接口 建议使用runAsync请求而不是run,区别请参考文档https://next.cn.attojs.org/api/#runasync
 </script>
 ```
 
@@ -182,7 +182,7 @@ export function listApi(options: RequestOptions<ListResult, [ListParams]>) {
 </template>
 <script setup lang="ts" name="request">
 import { listApi } from '@/api/example';
-const { run, loading, error, data } = listApi({ defaultParams: [{ page: 1, size: 10 }], manual: false });//manual代表组件加载后自动请求接口
+const { runAsync, loading, error, data } = listApi({ defaultParams: [{ page: 1, size: 10 }], manual: false });//manual代表组件加载后自动请求接口
 </script>
 ```
 ## `setup`外请求示例
