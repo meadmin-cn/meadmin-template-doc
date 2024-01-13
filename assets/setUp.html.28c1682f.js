@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-3f85df3d","path":"/more/setUp.html","title":"setup\u6807\u7B7E\u8BED\u6CD5\u8BBE\u7F6E\u81EA\u5B9A\u4E49\u5C5E\u6027","lang":"zh-cn","frontmatter":{},"excerpt":"","headers":[],"git":{"updatedTime":1681092937000,"contributors":[{"name":"yuntian001","email":"yuntian001z@qq.com","commits":1}]},"filePathRelative":"more/setUp.md"}');export{t as data};
