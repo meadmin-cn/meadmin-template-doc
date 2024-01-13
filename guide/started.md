@@ -30,8 +30,8 @@
 .
 ├── dist 打包文件夹
 ├── mock mock文件夹
+├── plugins vite插件
 ├── public 公共静态资源目录
-├── plugin vite 插件
 ├── src  主目录
 │   ├── api 接口文件
 │   ├── assets 资源文件
@@ -43,8 +43,9 @@
 │   │   ├── login.ts  登录配置
 │   │   └── theme.ts  主题配置
 │   ├── directives 指令（里面的指令会自动引入）
-│   ├── enums  枚举/常量
+│   ├── dict  字典
 │   ├── event 事件
+|   ├── hooks 公共hooks
 │   ├── icons 图标
 │   │   ├── svg  svg图标文件夹（放入此文件夹的svg会被自动注册图标组件）
 │   │   └── index.ts 图标自动注册入口文件

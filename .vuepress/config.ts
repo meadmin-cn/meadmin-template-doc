@@ -65,7 +65,12 @@ export default defineUserConfig({
                     {
                         text: '深入',
                         link: '/more/components.md',
-                    }]
+                    },
+                    {
+                        text: '其他',
+                        link: '/other/question.md',
+                    }
+                ]
             },
             {
                 text: '组件',
@@ -81,10 +86,6 @@ export default defineUserConfig({
                     {
                         text:'服务式组件',
                         link: '/components/service/meImageViewer.md',
-                    },
-                    {
-                        text: 'vite插件',
-                        link: '/components/plugin/vueSetupExtend.md',
                     }
                 ]
             },
@@ -163,6 +164,8 @@ export default defineUserConfig({
                         '/more/pinia.md',
                         '/more/apiAuto.md',
                         '/more/normalize.md',
+                        '/more/vsTemplate.md',
+                        '/more/setUp.md',
                         '/more/service.md',
                     ]
                 },
@@ -189,6 +192,8 @@ export default defineUserConfig({
                         '/components/extends/meWangEditor.md',
                         '/components/extends/meTable.md',
                         '/components/extends/meVxeTable.md',
+                        '/components/extends/meDialog.md',
+                        '/components/extends/meSearchForm.md',
                     ],
                 },
                 {
@@ -196,13 +201,7 @@ export default defineUserConfig({
                     children: [
                         '/components/service/meImageViewer.md',
                     ],
-                },
-                {
-                    text: 'vite插件',
-                    children: [
-                        '/components/plugin/vueSetupExtend.md',
-                    ],
-                },
+                }
             ],
         },
     }),
