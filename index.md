@@ -14,9 +14,9 @@ actions:
     type: secondary
 features:
   - title: 最新技术栈
-    details: 基于Vue3、Vite3、TypeScript、Pinia、Vue-request、Element-plus等最新技术栈开发
+    details: 基于Vue3、Vite5、TypeScript、Pinia、Vue-request、Element-plus等最新技术栈开发
   - title: 轻量快速的热重载
-    details: 基于Vite3无论应用程序大小如何，都始终极快的模块热重载（HMR）
+    details: 基于Vite5无论应用程序大小如何，都始终极快的模块热重载（HMR）
   - title: 国际化
     details: 独创的组件国际化语言包，开发便捷、按需加载
   - title:  便捷开发

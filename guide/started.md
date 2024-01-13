@@ -1,7 +1,7 @@
 # 快速上手
 
 ## 依赖环境
-- [nodejs v16+](https://nodejs.org/en/)
+- [nodejs v20+](https://nodejs.org/en/)
 
 ## 快速开始
 - clone 代码

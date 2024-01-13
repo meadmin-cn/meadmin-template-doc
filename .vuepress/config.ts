@@ -163,6 +163,7 @@ export default defineUserConfig({
                         '/more/pinia.md',
                         '/more/apiAuto.md',
                         '/more/normalize.md',
+                        '/more/service.md',
                     ]
                 },
                 {
